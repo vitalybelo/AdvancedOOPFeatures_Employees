@@ -21,9 +21,9 @@ public class Main {
         Optional<Employee> worker;
         worker = staff.stream().filter((e) ->
                 {
-                Calendar date = Calendar.getInstance();
-                date.setTime(e.getWorkStart());
-                return date.get(Calendar.YEAR) == year;
+                    Calendar date = Calendar.getInstance();
+                    date.setTime(e.getWorkStart());
+                    return date.get(Calendar.YEAR) == year;
                 }).max(Comparator.comparing(Employee::getSalary));
         return worker.orElse(null);
     }
